@@ -1,4 +1,13 @@
-FROM ubuntu:latest
-LABEL authors="idetoledo"
+FROM node:18-alpine
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
