@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mysql
+    platform: linux/arm64
+    container_name: animais
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: animals_db
+      MYSQL_USER: igor
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
